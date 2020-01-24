@@ -15,6 +15,7 @@
 		CCD1A61E23DA8BD700FD4DF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCD1A61C23DA8BD700FD4DF1 /* LaunchScreen.storyboard */; };
 		CCD1A62923DA8BD700FD4DF1 /* FlixCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD1A62823DA8BD700FD4DF1 /* FlixCloneTests.swift */; };
 		CCD1A63423DA8BD700FD4DF1 /* FlixCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD1A63323DA8BD700FD4DF1 /* FlixCloneUITests.swift */; };
+		CCD1A64223DA916500FD4DF1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD1A64123DA916500FD4DF1 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CCD1A62F23DA8BD700FD4DF1 /* FlixCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlixCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCD1A63323DA8BD700FD4DF1 /* FlixCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlixCloneUITests.swift; sourceTree = "<group>"; };
 		CCD1A63523DA8BD700FD4DF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCD1A64123DA916500FD4DF1 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				CCD1A61A23DA8BD700FD4DF1 /* Assets.xcassets */,
 				CCD1A61C23DA8BD700FD4DF1 /* LaunchScreen.storyboard */,
 				CCD1A61F23DA8BD700FD4DF1 /* Info.plist */,
+				CCD1A64123DA916500FD4DF1 /* TableViewCell.swift */,
 			);
 			path = FlixClone;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCD1A61623DA8BD600FD4DF1 /* ViewController.swift in Sources */,
+				CCD1A64223DA916500FD4DF1 /* TableViewCell.swift in Sources */,
 				CCD1A61223DA8BD600FD4DF1 /* AppDelegate.swift in Sources */,
 				CCD1A61423DA8BD600FD4DF1 /* SceneDelegate.swift in Sources */,
 			);
