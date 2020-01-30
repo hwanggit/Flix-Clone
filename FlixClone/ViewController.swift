@@ -7,13 +7,11 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var moviesTable: UITableView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var synopsisLabel: UILabel!
-    @IBOutlet weak var moviePoster: UIImageView!
     
     var movies = [[String:Any]]()
     
@@ -28,16 +26,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
-           // This will run when the network request returns
-           if let error = error {
-              print(error.localizedDescription)
-           } else if let data = data {
-              let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-
-            self.movies = dataDictionary["results"] as! [[String:Any]]
-            
-            self.moviesTable.reloadData()
-           }
+            // This will run when the network request returns
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let data = data {
+                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                
+                self.movies = dataDictionary["results"] as! [[String:Any]]
+                
+                self.moviesTable.reloadData()
+            }
         }
         task.resume()
     }
@@ -51,13 +49,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let movie = movies[indexPath.row]
         let title = movie["title"] as! String
+        let synopsis = movie["overview"] as! String
         
-        cell.titleLabel!.text = title
+        let baseUrl = "https://image.tmdb.org/t/p/w185"
+        let imageUrl = movie["poster_path"] as! String
+        
+        cell.movieTitle.text = title
+        cell.movieSynopsis.text = synopsis
+        
+        if let posterUrl = URL(string: baseUrl + imageUrl) {
+            cell.moviePoster.af_setImage(withURL: posterUrl)
+        }
         
         return cell
     }
-    
-
-
 }
 
