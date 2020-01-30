@@ -1,0 +1,6 @@
+framework module Pods_FlixClone_FlixCloneUITests {
+  umbrella header "Pods-FlixClone-FlixCloneUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
