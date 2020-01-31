@@ -64,6 +64,7 @@
                                             <outlet property="moviePoster" destination="iUJ-DD-91x" id="YSz-xg-rnW"/>
                                             <outlet property="movieSynopsis" destination="jSn-RU-uAa" id="c03-1h-bAO"/>
                                             <outlet property="movieTitle" destination="EuQ-nA-ulR" id="OVa-Q5-J0T"/>
+                                            <segue destination="Cgh-AV-izB" kind="show" id="b0j-aG-TN5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -86,6 +87,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="118.52678571428571"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="vts-8G-Krf">
+            <objects>
+                <viewController id="Cgh-AV-izB" customClass="DetailsViewController" customModule="FlixClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w9t-Uw-tUG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hdR-o6-JZC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oYk-pG-rFu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="brK-4c-SEE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1775" y="117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QpP-fE-DRC">

@@ -17,7 +17,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         moviesTable.dataSource = self
         moviesTable.delegate = self
@@ -63,5 +62,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell
     }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Find the selected movie
+        let cell = sender as! UITableViewCell
+        let indexPath = moviesTable.indexPath(for: cell)!
+        
+        let movie = movies[indexPath.row]
+        
+        // Pass the selected movie to the details view controller.
+        let detailsViewController = segue.destination as! DetailsViewController
+        detailsViewController.movie = movie
+        
+        moviesTable.deselectRow(at: indexPath, animated: true)
+    }
+    
 }
 
