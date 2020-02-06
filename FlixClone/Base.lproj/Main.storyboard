@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,6 +18,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QJk-Oe-3xa">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="iJO-Je-fmd" customClass="TableViewCell" customModule="FlixClone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="134.5"/>
@@ -61,6 +61,7 @@
                                                 <constraint firstItem="iUJ-DD-91x" firstAttribute="leading" secondItem="h3r-3v-Jnm" secondAttribute="leading" constant="16" id="u4D-tD-5Rj"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="moviePoster" destination="iUJ-DD-91x" id="YSz-xg-rnW"/>
                                             <outlet property="movieSynopsis" destination="jSn-RU-uAa" id="c03-1h-bAO"/>
@@ -93,7 +94,7 @@
         <scene sceneID="vts-8G-Krf">
             <objects>
                 <viewController id="Cgh-AV-izB" customClass="DetailsViewController" customModule="FlixClone" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="w9t-Uw-tUG">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="w9t-Uw-tUG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -111,7 +112,7 @@
                                     <constraint firstAttribute="height" constant="158" id="pLL-CW-x3g"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfg-kR-AcO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfg-kR-AcO">
                                 <rect key="frame" x="138" y="322" width="256" height="26.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="256" id="Wxw-hv-RfO"/>
@@ -150,6 +151,7 @@
                             <constraint firstItem="Lfw-Rs-vBg" firstAttribute="leading" secondItem="2kZ-SD-Q1n" secondAttribute="trailing" constant="8" id="gfe-Gx-EBl"/>
                             <constraint firstItem="nfg-kR-AcO" firstAttribute="leading" secondItem="2kZ-SD-Q1n" secondAttribute="trailing" constant="8" id="gxe-Zx-sTf"/>
                             <constraint firstItem="9H9-Hy-tkN" firstAttribute="top" secondItem="2kZ-SD-Q1n" secondAttribute="bottom" constant="20" id="kqU-yf-7pJ"/>
+                            <constraint firstItem="hdR-o6-JZC" firstAttribute="trailing" secondItem="nfg-kR-AcO" secondAttribute="trailing" constant="20" id="pmU-Uz-v2z"/>
                             <constraint firstItem="TKQ-Ie-9wA" firstAttribute="top" secondItem="hdR-o6-JZC" secondAttribute="top" id="rbd-Eo-G0h"/>
                             <constraint firstItem="TKQ-Ie-9wA" firstAttribute="top" secondItem="hdR-o6-JZC" secondAttribute="top" id="v7L-3y-XDv"/>
                         </constraints>
@@ -166,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brK-4c-SEE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-717.39130434782612" y="1634.5982142857142"/>
+            <point key="canvasLocation" x="132" y="1688"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="IXP-d5-zdo">
@@ -210,39 +212,42 @@
         <scene sceneID="8k6-Hi-DBy">
             <objects>
                 <viewController id="V10-UA-yUW" customClass="MovieGridViewController" customModule="FlixClone" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="79Q-vV-eM2">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" id="f3g-Xo-2LH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IyP-J1-txI">
-                            <size key="itemSize" width="200" height="258"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="2" id="xIf-MV-Rug">
+                            <size key="itemSize" width="201" height="271"/>
+                            <size key="estimatedItemSize" width="120" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieGridCell" id="nbX-AC-2ae" customClass="MovieGridCell" customModule="FlixClone" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieGridCell" id="s8M-oD-GH6" customClass="MovieGridCell" customModule="FlixClone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="201" height="271"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="O49-my-JQQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="201" height="271"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lNN-vy-c36">
-                                            <rect key="frame" x="1" y="0.0" width="111" height="35"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wVF-1J-HVO">
+                                            <rect key="frame" x="0.0" y="0.0" width="201" height="271"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
-                                </collectionViewCellContentView>
+                                </view>
+                                <size key="customSize" width="201" height="271"/>
                                 <connections>
-                                    <outlet property="posterView" destination="lNN-vy-c36" id="dRL-GE-eIP"/>
+                                    <outlet property="posterView" destination="wVF-1J-HVO" id="H5u-cR-PXR"/>
+                                    <segue destination="Cgh-AV-izB" kind="show" id="Ix8-pZ-vQr"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Superhero" id="E7Q-fi-u5g"/>
                     <connections>
-                        <outlet property="collectionView" destination="79Q-vV-eM2" id="dlz-zt-zRk"/>
+                        <outlet property="collectionView" destination="f3g-Xo-2LH" id="4wE-Mw-AcD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IyL-nN-NBe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -273,4 +278,7 @@
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ix8-pZ-vQr"/>
+    </inferredMetricsTieBreakers>
 </document>
