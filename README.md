@@ -34,8 +34,9 @@ Describe any challenges encountered while building the app.
 - [x] (1pt) Run your app on a real device.
 
 ### DEMO
-<div style="width:100%;height:0;padding-bottom:176%;position:relative;"><iframe src="https://giphy.com/embed/KyBtxStSmocf49MXdM" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/KyBtxStSmocf49MXdM">via GIPHY</a></p>
+<img src="https://media.giphy.com/media/RhH8RRyPt9X8s7GSrO/giphy.gif" width=250><br>
 
 ### Notes
 
 Most challenging was making a good UI layout that didn't overflow.
+
