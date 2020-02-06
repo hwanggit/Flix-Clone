@@ -34,7 +34,7 @@ Describe any challenges encountered while building the app.
 - [x] (1pt) Run your app on a real device.
 
 ### DEMO
-<img src="https://media.giphy.com/media/RhH8RRyPt9X8s7GSrO/giphy.gif" width=250><br>
+<img src="https://media.giphy.com/media/ghUQ6MjSd8uV2Su73U/giphy.gif" width=250><br>
 
 ### Notes
 
